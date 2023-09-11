@@ -1,0 +1,41 @@
+import random
+
+goorno = True
+while goorno:
+    operators = ["+", "-", "×", "÷"]
+
+    num = random.randint(0, 3)
+
+    operator = operators[num]
+    number = random.randint(1, 100000000)
+    number2 = random.randint(1, 10000000)
+    print(f"{number} {operator} {number2}?")
+    thing = input("")
+    thing2 = int(thing)
+    anser = 0
+    if num == 0:
+        anser = number + number2
+    elif num == 1:
+        anser = number - number2
+    elif num == 2:
+        anser = number * number2
+    elif num == 3:
+        anser = number / number2
+    if thing2 == anser:
+        print("Good Job!")
+    else:
+        print("Bad.")
+        print("Say 'answer' to get the answer")
+        answer = input("")
+        if answer == "answer":
+            print(f"The Answer Is {anser}")
+
+    again = input("Do You Want Another One? ")
+    if again == "yes":
+        goorno = True
+    elif again == "no":
+        goorno = False
+    else:
+        print("invalid input")
+        again = input("Do You Want Another One? ")
+        
